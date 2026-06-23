@@ -1,0 +1,1006 @@
+﻿<!-- Pega este archivo completo en una página o entrada de Blogger usando la vista HTML. -->
+<style>
+:root {
+  --blue: #0b5cad;
+  --green: #188754;
+  --orange: #f07b22;
+  --ink: #172033;
+  --muted: #5d697d;
+  --line: #d8e2ef;
+  --soft-blue: #eef7ff;
+  --soft-green: #edf8f2;
+  --soft-orange: #fff4e8;
+  --page: #f7fbff;
+  --white: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--page);
+  line-height: 1.65;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px clamp(18px, 4vw, 56px);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+
+.brand img {
+  width: 230px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.nav-links a,
+.entry-index a,
+.button {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.nav-links a,
+.entry-index a {
+  color: var(--ink);
+  background: var(--soft-blue);
+  border: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.entry-index a:hover {
+  border-color: var(--blue);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(36px, 7vw, 82px) clamp(18px, 4vw, 56px);
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(44px, 8vw, 86px);
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.subtitle {
+  margin: 16px 0;
+  color: var(--green);
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 800;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--orange);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero-copy > p:last-of-type {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button.primary {
+  color: var(--white);
+  background: var(--blue);
+}
+
+.button.secondary {
+  color: var(--blue);
+  background: var(--white);
+  border: 2px solid var(--blue);
+}
+
+.hero-mascot {
+  width: min(100%, 330px);
+  justify-self: center;
+}
+
+.section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(36px, 6vw, 70px) clamp(18px, 4vw, 56px);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.05;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.project-grid > div,
+.entry,
+.comments,
+.checklist {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 14px 35px rgba(11, 92, 173, 0.08);
+}
+
+.project-grid > div {
+  padding: 22px;
+}
+
+.project-grid h3 {
+  margin-top: 0;
+  color: var(--green);
+  font-size: 1.25rem;
+}
+
+.entry-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.entry {
+  padding: clamp(20px, 4vw, 34px);
+  margin-top: 22px;
+  scroll-margin-top: 92px;
+}
+
+.entry-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.entry-meta span {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--soft-green);
+}
+
+.article-title {
+  margin-top: 0;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.12;
+}
+
+.entry h2:not(.article-title) {
+  margin-top: 30px;
+  font-size: 1.35rem;
+}
+
+.entry p {
+  max-width: 82ch;
+}
+
+.entry img {
+  margin: 18px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.entry table {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.entry th,
+.entry td {
+  padding: 12px;
+  vertical-align: top;
+}
+
+.comments,
+.checklist {
+  margin-top: 24px;
+}
+
+.comment-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+blockquote {
+  margin: 0;
+  padding: 18px;
+  color: var(--ink);
+  background: var(--soft-orange);
+  border-left: 6px solid var(--orange);
+  border-radius: 6px;
+}
+
+.discussion-panel {
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.discussion-setup {
+  margin-bottom: 18px;
+  padding: 16px;
+  background: var(--soft-blue);
+  border: 1px solid #cbe2f8;
+  border-radius: 8px;
+}
+
+.discussion-setup code {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.giscus {
+  margin-top: 18px;
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.check-grid li {
+  padding: 14px 16px;
+  background: var(--soft-green);
+  border: 1px solid #cbe8d7;
+  border-radius: 6px;
+}
+
+.check-grid li::before {
+  content: "✓";
+  margin-right: 8px;
+  color: var(--green);
+  font-weight: 900;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 28px clamp(18px, 4vw, 56px);
+  color: var(--white);
+  background: var(--blue);
+}
+
+.site-footer a {
+  color: var(--white);
+}
+
+@media (max-width: 820px) {
+  .topbar,
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    position: static;
+    align-items: flex-start;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+  .hero-mascot {
+    justify-self: start;
+  }
+
+  .project-grid,
+  .comment-list,
+  .check-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand img {
+    width: 190px;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+  }
+
+  .nav-links a,
+  .entry-index a,
+  .button {
+    width: 100%;
+  }
+}
+
+.inline-svg { display: block; max-width: 100%; height: auto; }
+.entry svg.inline-svg { margin: 18px 0; border: 1px solid var(--line); border-radius: 8px; background: var(--white); }
+.brand svg.inline-svg { width: 230px; height: auto; border: 0; }
+</style>
+<header class="site-header" id="inicio">
+    <nav class="topbar" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">
+        <svg class="inline-svg" aria-label="Logo de NexoSoporte Digital" xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-labelledby="title desc">
+  <title id="title">Logo de NexoSoporte Digital</title>
+  <desc id="desc">Logo con nube, escudo y nodos de conexión para empresa de soporte técnico.</desc>
+  <rect width="900" height="320" fill="#f7fbff"/>
+  <g transform="translate(65 70)">
+    <path d="M120 145h210c39 0 70-31 70-70s-31-70-70-70c-16 0-31 5-43 14C267-3 237-15 205-15c-52 0-96 34-110 81-4-1-8-1-12-1-36 0-65 29-65 65s29 65 65 65h37z" fill="#dff2ff" stroke="#0b5cad" stroke-width="8"/>
+    <path d="M214 43l68 26v45c0 45-29 84-68 96-39-12-68-51-68-96V69z" fill="#188754" opacity=".95"/>
+    <path d="M183 120l22 22 48-58" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="82" cy="118" r="14" fill="#f07b22"/>
+    <circle cx="330" cy="70" r="14" fill="#f07b22"/>
+    <circle cx="304" cy="168" r="14" fill="#f07b22"/>
+    <path d="M96 118h50M282 76h36M282 151l24 14" stroke="#0b5cad" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="485" y="130" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#0b5cad">NexoSoporte</text>
+  <text x="488" y="185" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#188754">Digital</text>
+  <text x="488" y="235" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#333">Soluciones claras, soporte cercano.</text>
+</svg>
+      </a>
+      <div class="nav-links">
+        <a href="#proyecto">Proyecto</a>
+        <a href="#entradas">Entradas</a>
+        <a href="#comentarios">Comentarios</a>
+        <a href="#checklist">Checklist</a>
+      </div>
+    </nav>
+    <div class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Blog escolar de soporte técnico</p>
+        <h1>NexoSoporte Digital</h1>
+        <p class="subtitle">Soluciones claras, soporte cercano.</p>
+        <p>Empresa ficticia dedicada al soporte remoto, telefónico y presencial para estudiantes, hogares y pequeños negocios.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#entradas">Ver entradas</a>
+          <a class="button secondary" href="#checklist">Revisar cotejo</a>
+        </div>
+      </div>
+      <svg class="hero-mascot inline-svg" aria-label="Mascota NexoBot" xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Mascota NexoBot</title>
+  <desc id="desc">Mascota robot amable para representar soporte técnico.</desc>
+  <rect width="600" height="600" rx="36" fill="#f7fbff"/>
+  <circle cx="300" cy="93" r="18" fill="#f07b22"/>
+  <path d="M300 112v55" stroke="#0b5cad" stroke-width="10" stroke-linecap="round"/>
+  <rect x="155" y="165" width="290" height="235" rx="42" fill="#dff2ff" stroke="#0b5cad" stroke-width="10"/>
+  <circle cx="240" cy="260" r="28" fill="#0b5cad"/>
+  <circle cx="360" cy="260" r="28" fill="#0b5cad"/>
+  <circle cx="250" cy="250" r="8" fill="#fff"/>
+  <circle cx="370" cy="250" r="8" fill="#fff"/>
+  <path d="M238 330c38 38 86 38 124 0" fill="none" stroke="#188754" stroke-width="14" stroke-linecap="round"/>
+  <rect x="120" y="240" width="45" height="105" rx="22" fill="#188754"/>
+  <rect x="435" y="240" width="45" height="105" rx="22" fill="#188754"/>
+  <path d="M198 420h204l-28 72H226z" fill="#0b5cad"/>
+  <rect x="205" y="492" width="190" height="22" rx="11" fill="#f07b22"/>
+  <text x="300" y="560" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0b5cad">NexoBot</text>
+</svg>
+    </div>
+  </header>
+
+  <main>
+    <section class="section project" id="proyecto">
+      <div class="section-heading">
+        <p class="eyebrow">Perfil del autor</p>
+        <h2>Propósito y metas del proyecto</h2>
+      </div>
+      <div class="project-grid">
+        <div>
+          <h3>Autor</h3>
+          <p>Mi nombre es <strong>Nombre del autor</strong>. Soy estudiante del área de soporte y mantenimiento de equipo de cómputo. Este blog presenta una propuesta de empresa dedicada a brindar atención técnica a distancia, soporte telefónico y servicios presenciales.</p>
+        </div>
+        <div>
+          <h3>Propósito</h3>
+          <p>Documentar cómo funciona una empresa de soporte técnico: identidad institucional, normas de atención, políticas, protocolos, herramientas de acceso remoto, servicios presenciales y contrato de confidencialidad.</p>
+        </div>
+        <div>
+          <h3>Metas</h3>
+          <ul>
+            <li>Explicar servicios de soporte remoto, telefónico y presencial.</li>
+            <li>Aplicar reglas de atención basadas en respeto y privacidad.</li>
+            <li>Comparar herramientas como TeamViewer, AnyDesk, Supremo y Chrome Remote Desktop.</li>
+            <li>Diseñar un protocolo de diagnóstico, solución y seguimiento.</li>
+            <li>Presentar un contrato informático y de confidencialidad.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section entries" id="entradas">
+      <div class="section-heading">
+        <p class="eyebrow">Contenido del blog</p>
+        <h2>Entradas del proyecto</h2>
+      </div>
+      <div class="entry-index" aria-label="Índice de entradas">
+        <a href="#entrada-01">1. Empresa</a>
+        <a href="#entrada-02">2. Normas</a>
+        <a href="#entrada-03">3. Políticas</a>
+        <a href="#entrada-04">4. Protocolo</a>
+        <a href="#entrada-05">5. Contrato</a>
+        <a href="#entrada-06">6. Software</a>
+        <a href="#entrada-07">7. Presencial</a>
+      </div>
+      <article class="entry" id="entrada-01">
+        <div class="entry-meta">
+          <span>Entrada 1</span>
+          <span>empresa, soporte-a-distancia, identidad-corporativa, servicio-técnico</span>
+        </div>
+
+<h2 class="article-title"><span style="color:#0b5cad;">NexoSoporte Digital: identidad y servicios de soporte a distancia</span></h2>
+
+<p><svg class="inline-svg" style="max-width:320px;width:100%;height:auto;" aria-label="Logo de NexoSoporte Digital" xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-labelledby="title desc">
+  <title id="title">Logo de NexoSoporte Digital</title>
+  <desc id="desc">Logo con nube, escudo y nodos de conexión para empresa de soporte técnico.</desc>
+  <rect width="900" height="320" fill="#f7fbff"/>
+  <g transform="translate(65 70)">
+    <path d="M120 145h210c39 0 70-31 70-70s-31-70-70-70c-16 0-31 5-43 14C267-3 237-15 205-15c-52 0-96 34-110 81-4-1-8-1-12-1-36 0-65 29-65 65s29 65 65 65h37z" fill="#dff2ff" stroke="#0b5cad" stroke-width="8"/>
+    <path d="M214 43l68 26v45c0 45-29 84-68 96-39-12-68-51-68-96V69z" fill="#188754" opacity=".95"/>
+    <path d="M183 120l22 22 48-58" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="82" cy="118" r="14" fill="#f07b22"/>
+    <circle cx="330" cy="70" r="14" fill="#f07b22"/>
+    <circle cx="304" cy="168" r="14" fill="#f07b22"/>
+    <path d="M96 118h50M282 76h36M282 151l24 14" stroke="#0b5cad" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <text x="485" y="130" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#0b5cad">NexoSoporte</text>
+  <text x="488" y="185" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#188754">Digital</text>
+  <text x="488" y="235" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#333">Soluciones claras, soporte cercano.</text>
+</svg></p>
+<p><svg class="inline-svg" style="max-width:260px;width:100%;height:auto;" aria-label="Mascota NexoBot para soporte técnico" xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Mascota NexoBot</title>
+  <desc id="desc">Mascota robot amable para representar soporte técnico.</desc>
+  <rect width="600" height="600" rx="36" fill="#f7fbff"/>
+  <circle cx="300" cy="93" r="18" fill="#f07b22"/>
+  <path d="M300 112v55" stroke="#0b5cad" stroke-width="10" stroke-linecap="round"/>
+  <rect x="155" y="165" width="290" height="235" rx="42" fill="#dff2ff" stroke="#0b5cad" stroke-width="10"/>
+  <circle cx="240" cy="260" r="28" fill="#0b5cad"/>
+  <circle cx="360" cy="260" r="28" fill="#0b5cad"/>
+  <circle cx="250" cy="250" r="8" fill="#fff"/>
+  <circle cx="370" cy="250" r="8" fill="#fff"/>
+  <path d="M238 330c38 38 86 38 124 0" fill="none" stroke="#188754" stroke-width="14" stroke-linecap="round"/>
+  <rect x="120" y="240" width="45" height="105" rx="22" fill="#188754"/>
+  <rect x="435" y="240" width="45" height="105" rx="22" fill="#188754"/>
+  <path d="M198 420h204l-28 72H226z" fill="#0b5cad"/>
+  <rect x="205" y="492" width="190" height="22" rx="11" fill="#f07b22"/>
+  <text x="300" y="560" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0b5cad">NexoBot</text>
+</svg></p>
+
+<h2><span style="color:#188754;">1. Datos generales de la empresa</span></h2>
+<p><strong>NexoSoporte Digital</strong> es una empresa ficticia de soporte técnico enfocada en resolver problemas de computadoras, redes domésticas, software escolar, correo electrónico, videollamadas, impresoras y seguridad básica. Atiende a estudiantes, familias, docentes y pequeños negocios que necesitan ayuda rápida sin trasladarse a un taller.</p>
+<p><strong>Dirección:</strong> Av. Tecnología 120, Col. Centro, Ciudad de México, México. <br><strong>Teléfono:</strong> 55 1234 5678. <br><strong>Correo:</strong> contacto@nexosoporte.example. <br><strong>Horario:</strong> lunes a sábado de 9:00 a 18:00.</p>
+
+<h2><span style="color:#f07b22;">2. Redes sociales, logo, slogan y mascota</span></h2>
+<p><strong>Redes sociales:</strong> Facebook: NexoSoporte Digital, Instagram: @nexosoporte, TikTok: @nexosoportedigital y YouTube: NexoSoporte Aprende. Estas redes se usan para publicar tips de seguridad, mini tutoriales y avisos de mantenimiento.</p>
+<p><strong>Logo:</strong> una nube conectada con un escudo, porque el soporte remoto debe ser rápido, pero también seguro. <strong>Slogan:</strong> <span style="color:#0b5cad;"><strong>Soluciones claras, soporte cercano.</strong></span> <strong>Mascota:</strong> NexoBot, un asistente digital que representa paciencia, orden y ayuda paso a paso.</p>
+
+<h2><span style="color:#0b5cad;">3. Servicios de soporte a distancia</span></h2>
+<p>El soporte a distancia consiste en ayudar al usuario sin estar físicamente junto al equipo. Puede realizarse por llamada telefónica, videollamada, chat o acceso remoto autorizado. Antes de entrar al equipo del cliente, se explica que acciones se realizarán y se solicita permiso.</p>
+<p>La empresa ofrece asesorías para instalación de programas, configuración de correo, recuperación básica de cuentas, instalación de impresoras, limpieza de archivos temporales, orientación sobre antivirus, configuración de videollamadas y revisión inicial de fallas de red.</p>
+
+<h2><span style="color:#188754;">4. Ejemplo práctico de atención</span></h2>
+<p>Un estudiante no puede entregar una tarea porque su computadora no reconoce la impresora. El técnico revisa por teléfono el modelo de impresora, verifica si está encendida y conectada, pide autorización para conectarse por AnyDesk y reinstala el controlador desde el sitio oficial del fabricante. Al final, solicita una prueba de impresión y registra el caso.</p>
+
+<h2><span style="color:#f07b22;">5. Competencias que se desarrollan</span></h2>
+<p>Esta entrada promueve comúnicación efectiva, pensamiento crítico y responsabilidad digital. El técnico no solo arregla una falla: escucha, explica con palabras sencillas, protege datos personales y documenta lo realizado.</p>
+
+<h2>Fuentes consultadas</h2>
+<ul>
+  <li><a href="https://www.teamviewer.com/en/products/remote/" target="_blank">TeamViewer Remote: acceso y soporte remoto</a></li>
+  <li><a href="https://anydesk.com/en/features" target="_blank">AnyDesk: funciones de escritorio remoto</a></li>
+  <li><a href="https://remotedesktop.google.com/" target="_blank">Chrome Remote Desktop de Google</a></li>
+</ul>
+
+
+
+
+
+
+
+      </article>
+      <article class="entry" id="entrada-02">
+        <div class="entry-meta">
+          <span>Entrada 2</span>
+          <span>normas, atención-al-cliente, conducta, soporte-presencial, soporte-remoto</span>
+        </div>
+
+<h2 class="article-title"><span style="color:#0b5cad;">Reglas y normas de atención al cliente en soporte técnico</span></h2>
+
+<p><svg class="inline-svg" style="max-width:820px;width:100%;height:auto;" aria-label="Normas de atención al cliente en soporte técnico" xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Normas de atención al cliente</title>
+  <desc id="desc">Ilustración de atención respetuosa en soporte técnico.</desc>
+  <rect width="1000" height="520" fill="#f7fbff"/>
+  <rect x="80" y="80" width="360" height="270" rx="24" fill="#dff2ff" stroke="#0b5cad" stroke-width="6"/>
+  <circle cx="210" cy="175" r="48" fill="#188754"/>
+  <path d="M140 300c25-60 115-60 140 0" fill="none" stroke="#0b5cad" stroke-width="18" stroke-linecap="round"/>
+  <path d="M260 175c55 0 100 32 120 78" fill="none" stroke="#f07b22" stroke-width="14" stroke-linecap="round"/>
+  <rect x="550" y="105" width="330" height="250" rx="22" fill="#ffffff" stroke="#188754" stroke-width="6"/>
+  <path d="M600 170h220M600 235h220M600 300h150" stroke="#0b5cad" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="570" cy="170" r="14" fill="#f07b22"/>
+  <circle cx="570" cy="235" r="14" fill="#f07b22"/>
+  <circle cx="570" cy="300" r="14" fill="#f07b22"/>
+  <text x="500" y="445" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0b5cad">Escuchar, explicar y respetar</text>
+</svg></p>
+
+<h2><span style="color:#188754;">1. Importancia de las reglas de atención</span></h2>
+<p>Las reglas de atención ayudan a que el soporte técnico sea ordenado, respetuoso y confiable. Un técnico puede tener muchos conocimientos, pero si no escucha o no protege la información del usuario, el servicio pierde calidad.</p>
+
+<h2><span style="color:#f07b22;">2. Normas para soporte técnico a distancia</span></h2>
+<p>En soporte remoto se debe saludar, identificarse, confirmar el nombre del cliente, escuchar el problema completo y explicar cada paso antes de hacerlo. Si se requiere acceso remoto, el cliente debe autorizarlo y permanecer informado durante la sesión.</p>
+<p>También se debe evitar revisar archivos personales que no tengan relación con la falla. Si aparece información privada en pantalla, el técnico debe pedir al cliente que cierre la ventana o pausar la asistencia.</p>
+
+<h2><span style="color:#0b5cad;">3. Normas para soporte presencial</span></h2>
+<p>En una visita presencial el técnico debe llegar puntual, presentarse, portar identificación de la empresa y revisar el equipo frente al cliente. Antes de mover, abrir o cambiar piezas, debe explicar el motivo y solicitar autorización.</p>
+<p>El área de trabajo debe mantenerse limpia. Al finalizar, el técnico entrega un resumen de acciones realizadas, recomendaciones y costo autorizado.</p>
+
+<h2><span style="color:#188754;">4. Conductas permitidas y no permitidas</span></h2>
+<p><strong>Permitido:</strong> usar lenguaje claro, pedir permiso, documentar el caso, informar riesgos y ofrecer alternativas. <strong>No permitido:</strong> culpar al cliente, burlarse de sus dudas, instalar software sin permiso, copiar archivos, compartir contraseñas o prometer resultados imposibles.</p>
+
+<h2><span style="color:#f07b22;">5. Ejemplo de buena conducta</span></h2>
+<p>Si un cliente no sabe explicar la falla, el técnico puede preguntar: "¿Qué estaba haciendo cuando apareció el error?" y "¿El problema ocurre siempre o solo a veces?". Así obtiene datos sin presionar ni hacer sentir mal al usuario.</p>
+
+<h2>Fuentes consultadas</h2>
+<ul>
+  <li><a href="https://support.microsoft.com/" target="_blank">Soporte de Microsoft</a></li>
+  <li><a href="https://support.google.com/" target="_blank">Centro de ayuda de Google</a></li>
+  <li><a href="https://www.teamviewer.com/en/resources/trust-center/" target="_blank">TeamViewer Trust Center</a></li>
+</ul>
+
+
+
+
+
+
+
+      </article>
+      <article class="entry" id="entrada-03">
+        <div class="entry-meta">
+          <span>Entrada 3</span>
+          <span>políticas, soporte-telefónico, soporte-remoto, privacidad, seguridad</span>
+        </div>
+
+<h2 class="article-title"><span style="color:#0b5cad;">Políticas de soporte telefónico, soporte a distancia y delimitaciones</span></h2>
+
+<p><svg class="inline-svg" style="max-width:820px;width:100%;height:auto;" aria-label="Políticas de privacidad y autorización en soporte remoto" xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Políticas de privacidad</title>
+  <desc id="desc">Computadora con candado y autorización de acceso remoto.</desc>
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <rect x="110" y="120" width="500" height="290" rx="20" fill="#dff2ff" stroke="#0b5cad" stroke-width="7"/>
+  <rect x="155" y="165" width="410" height="190" rx="12" fill="#f7fbff"/>
+  <path d="M360 250v-38c0-48 72-48 72 0v38" fill="none" stroke="#188754" stroke-width="18" stroke-linecap="round"/>
+  <rect x="320" y="245" width="150" height="105" rx="18" fill="#188754"/>
+  <circle cx="395" cy="292" r="15" fill="#fff"/>
+  <path d="M395 305v24" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+  <rect x="670" y="145" width="220" height="240" rx="28" fill="#fff4e8" stroke="#f07b22" stroke-width="7"/>
+  <path d="M720 230l42 42 86-100" fill="none" stroke="#0b5cad" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="500" y="465" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0b5cad">Acceso solo con autorización</text>
+</svg></p>
+
+<h2><span style="color:#188754;">1. Política de identificación</span></h2>
+<p>Todo técnico de NexoSoporte Digital debe identificarse antes de iniciar el servicio. Debe mencionar su nombre, el motivo de la llamada y el número de folio del caso. Esto reduce riesgos de suplantación y aumenta la confianza del cliente.</p>
+
+<h2><span style="color:#f07b22;">2. Política de autorización</span></h2>
+<p>Ningún acceso remoto se realiza sin permiso del usuario. El cliente debe recibir una explicación breve de la herramienta que se usará, el tiempo estimado y las acciones principales. La sesión se cierra cuando termina la atención.</p>
+
+<h2><span style="color:#0b5cad;">3. Política de privacidad</span></h2>
+<p>El técnico solo puede revisar información relacionada con el problema reportado. No debe copiar fotos, documentos, contraseñas, mensajes ni archivos personales. Si necesita mover o respaldar información, debe pedir autorización por escrito o por mensaje confirmado.</p>
+
+<h2><span style="color:#188754;">4. Delimitaciones del servicio</span></h2>
+<p>El soporte telefónico y remoto puede resolver fallas de configuración, dudas de uso, errores de software, instalación de programas permitidos y diagnósticos iniciales. No sustituye reparaciones físicas complejas, recuperación avanzada de discos dañados ni eliminación garantizada de todo malware.</p>
+<p>La empresa no instala software pirata, no evade contraseñas ajenas, no accede a cuentas sin autorización del titular y no realiza actividades que comprometan la seguridad de terceros.</p>
+
+<h2><span style="color:#f07b22;">5. Ejemplo de aplicación</span></h2>
+<p>Si el usuario pide instalar un programa sin licencia, el técnico debe explicar que la empresa solo trabaja con software legal. Puede sugerir alternativas gratuitas o versiones de prueba oficiales, pero no instalar archivos de procedencia dudosa.</p>
+
+<h2>Fuentes consultadas</h2>
+<ul>
+  <li><a href="https://www.microsoft.com/en-us/trust-center" target="_blank">Microsoft Trust Center</a></li>
+  <li><a href="https://safety.google/" target="_blank">Google Safety Center</a></li>
+  <li><a href="https://www.teamviewer.com/en/resources/trust-center/" target="_blank">TeamViewer Trust Center</a></li>
+</ul>
+
+
+
+
+
+
+
+      </article>
+      <article class="entry" id="entrada-04">
+        <div class="entry-meta">
+          <span>Entrada 4</span>
+          <span>protocolo, diagrama-de-flujo, soporte-remoto, atención-al-cliente, estrategia</span>
+        </div>
+
+<h2 class="article-title"><span style="color:#0b5cad;">Protocolo y diagrama de flujo para brindar soporte remoto</span></h2>
+
+<p><svg class="inline-svg" style="max-width:900px;width:100%;height:auto;" aria-label="Diagrama de flujo para brindar soporte remoto" xmlns="http://www.w3.org/2000/svg" width="1100" height="760" viewBox="0 0 1100 760" role="img" aria-labelledby="title desc">
+  <title id="title">Diagrama de flujo de soporte remoto</title>
+  <desc id="desc">Proceso desde recepción del caso hasta cierre o visita presencial.</desc>
+  <rect width="1100" height="760" fill="#ffffff"/>
+  <style>
+    .box{fill:#dff2ff;stroke:#0b5cad;stroke-width:4;rx:18}
+    .decision{fill:#fff4e8;stroke:#f07b22;stroke-width:4}
+    .end{fill:#e8f7ee;stroke:#188754;stroke-width:4;rx:18}
+    .text{font-family:Arial, Helvetica, sans-serif;font-size:24px;fill:#1f2937;font-weight:700}
+    .small{font-family:Arial, Helvetica, sans-serif;font-size:20px;fill:#1f2937}
+    .arrow{stroke:#0b5cad;stroke-width:5;fill:none;marker-end:url(#arrow)}
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#0b5cad"/>
+    </marker>
+  </defs>
+  <rect x="390" y="35" width="320" height="72" class="end"/>
+  <text x="550" y="80" text-anchor="middle" class="text">Inicio del caso</text>
+  <path d="M550 107v52" class="arrow"/>
+  <rect x="330" y="160" width="440" height="86" class="box"/>
+  <text x="550" y="198" text-anchor="middle" class="text">Registrar datos</text>
+  <text x="550" y="226" text-anchor="middle" class="small">cliente, equipo y problema</text>
+  <path d="M550 246v55" class="arrow"/>
+  <polygon points="550,305 735,390 550,475 365,390" class="decision"/>
+  <text x="550" y="383" text-anchor="middle" class="text">¿Requiere acceso</text>
+  <text x="550" y="413" text-anchor="middle" class="text">remoto?</text>
+  <path d="M365 390H180v75" class="arrow"/>
+  <text x="260" y="375" class="small">No</text>
+  <rect x="55" y="465" width="250" height="86" class="box"/>
+  <text x="180" y="503" text-anchor="middle" class="text">Guíar por llamada</text>
+  <text x="180" y="531" text-anchor="middle" class="small">pasos seguros</text>
+  <path d="M735 390h185v75" class="arrow"/>
+  <text x="815" y="375" class="small">Si</text>
+  <rect x="795" y="465" width="250" height="86" class="box"/>
+  <text x="920" y="503" text-anchor="middle" class="text">Solicitar permiso</text>
+  <text x="920" y="531" text-anchor="middle" class="small">abrir sesión remota</text>
+  <path d="M180 551v72h275" class="arrow"/>
+  <path d="M920 551v72H645" class="arrow"/>
+  <rect x="455" y="592" width="190" height="80" class="box"/>
+  <text x="550" y="625" text-anchor="middle" class="text">Aplicar solución</text>
+  <text x="550" y="653" text-anchor="middle" class="small">y hacer prueba</text>
+  <path d="M550 672v45" class="arrow"/>
+  <rect x="390" y="705" width="320" height="44" class="end"/>
+  <text x="550" y="735" text-anchor="middle" class="text">Cerrar reporte</text>
+</svg></p>
+
+<h2><span style="color:#188754;">1. Objetivo del protocolo</span></h2>
+<p>El protocolo permite que cada caso de soporte remoto tenga orden, seguridad y evidencia. Su función es guiar al técnico desde el primer contacto hasta el cierre del servicio.</p>
+
+<h2><span style="color:#f07b22;">2. Fase de recepción del caso</span></h2>
+<p>El técnico saluda, se identifica, confirma los datos del cliente y registra el problema. También pregunta si la falla es urgente, si afecta trabajo escolar o laboral y si existen mensajes de error visibles.</p>
+
+<h2><span style="color:#0b5cad;">3. Fase de diagnóstico</span></h2>
+<p>Se revisan síntomas, cambios recientes, conexión a internet, sistema operativo y programas involucrados. Si basta con orientación telefónica, se guía al usuario paso a paso. Si se requiere acceso remoto, se solicita autorización.</p>
+
+<h2><span style="color:#188754;">4. Fase de solución y verificación</span></h2>
+<p>El técnico aplica la solución menos riesgosa primero: reinicio de servicio, actualización, configuración, reinstalación autorizada o limpieza básica. Después pide al cliente realizar una prueba para confirmar que el problema quedó resuelto.</p>
+
+<h2><span style="color:#f07b22;">5. Cierre y seguimiento</span></h2>
+<p>Al finalizar se entrega un resumen: problema reportado, acciones realizadas, resultado, recomendaciones y folio. Si no se resuelve a distancia, se agenda visita presencial o se deriva a diagnóstico especializado.</p>
+
+<h2>Fuentes consultadas</h2>
+<ul>
+  <li><a href="https://www.teamviewer.com/en/products/remote/" target="_blank">TeamViewer Remote</a></li>
+  <li><a href="https://anydesk.com/en/features" target="_blank">AnyDesk Features</a></li>
+  <li><a href="https://support.google.com/chrome/answer/1649523" target="_blank">Ayuda de Google: Escritorio remoto de Chrome</a></li>
+</ul>
+
+
+
+
+
+
+
+      </article>
+      <article class="entry" id="entrada-05">
+        <div class="entry-meta">
+          <span>Entrada 5</span>
+          <span>contrato-informático, confidencialidad, privacidad, soporte-técnico, empresa</span>
+        </div>
+
+<h2 class="article-title"><span style="color:#0b5cad;">Contrato informático y de confidencialidad de NexoSoporte Digital</span></h2>
+
+<p><svg class="inline-svg" style="max-width:820px;width:100%;height:auto;" aria-label="Contrato informático y confidencialidad" xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Contrato y confidencialidad</title>
+  <desc id="desc">Documento firmado con candado de protección de datos.</desc>
+  <rect width="1000" height="520" fill="#f7fbff"/>
+  <rect x="190" y="70" width="420" height="360" rx="18" fill="#ffffff" stroke="#0b5cad" stroke-width="7"/>
+  <path d="M250 150h300M250 210h300M250 270h230" stroke="#0b5cad" stroke-width="14" stroke-linecap="round"/>
+  <path d="M255 345c55-30 100 35 160-12 36-28 67-18 100 6" fill="none" stroke="#f07b22" stroke-width="12" stroke-linecap="round"/>
+  <path d="M720 250v-45c0-58 88-58 88 0v45" fill="none" stroke="#188754" stroke-width="18" stroke-linecap="round"/>
+  <rect x="675" y="245" width="178" height="125" rx="22" fill="#188754"/>
+  <circle cx="764" cy="300" r="17" fill="#fff"/>
+  <path d="M764 316v28" stroke="#fff" stroke-width="11" stroke-linecap="round"/>
+  <text x="500" y="480" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0b5cad">Datos protegidos por contrato</text>
+</svg></p>
+
+<h2><span style="color:#188754;">1. Partes del contrato</span></h2>
+<p>Por una parte, <strong>NexoSoporte Digital</strong>, empresa prestadora de servicios de soporte técnico. Por otra parte, <strong>el cliente</strong>, persona que solicita revisión, configuración, reparación o asesoría sobre equipos de cómputo, software o red.</p>
+
+<h2><span style="color:#f07b22;">2. Objeto del contrato</span></h2>
+<p>El contrato tiene como objetivo establecer las condiciones bajo las cuales la empresa brindará soporte remoto, telefónico o presencial. Incluye diagnóstico, asesoría, configuración, instalación autorizada y recomendaciones técnicas.</p>
+
+<h2><span style="color:#0b5cad;">3. Confidencialidad</span></h2>
+<p>La empresa se compromete a no divulgar información personal, académica, laboral, financiera o técnica observada durante el servicio. El técnico no podrá copiar, compartir o usar archivos del cliente para fines ajenos al soporte.</p>
+<p>El cliente también se compromete a no compartir claves temporales de acceso remoto con personas no autorizadas y a cerrar cualquier archivo sensible antes de iniciar la sesión.</p>
+
+<h2><span style="color:#188754;">4. Responsabilidades y límites</span></h2>
+<p>NexoSoporte Digital realizará el servicio con cuidado y honestidad. Sin embargo, no garantiza recuperación total de información en dispositivos dañados, reparación de equipos con fallas físicas graves ni funcionamiento de software sin licencia.</p>
+
+<h2><span style="color:#f07b22;">5. Aceptación del servicio</span></h2>
+<p>El cliente acepta el servicio al confirmar por mensaje, correo o firma que comprende el alcance, costo y riesgos básicos. Al terminar, se entrega reporte del caso y recomendaciones para prevenir nuevas fallas.</p>
+
+<h2>Fuentes consultadas</h2>
+<ul>
+  <li><a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf" target="_blank">Ley Federal de Protección de Datos Personales en Posesión de los Particulares</a></li>
+  <li><a href="https://www.inai.org.mx/" target="_blank">INAI: protección de datos personales</a></li>
+  <li><a href="https://www.microsoft.com/en-us/trust-center/privacy" target="_blank">Microsoft Trust Center: privacidad</a></li>
+</ul>
+
+
+
+
+
+
+
+      </article>
+      <article class="entry" id="entrada-06">
+        <div class="entry-meta">
+          <span>Entrada 6</span>
+          <span>software-remoto, teamviewer, anydesk, supremo, chrome-remote-desktop, herramientas</span>
+        </div>
+
+<h2 class="article-title"><span style="color:#0b5cad;">Software utilizado para realizar soporte remoto</span></h2>
+
+<p><svg class="inline-svg" style="max-width:820px;width:100%;height:auto;" aria-label="Herramientas de software para soporte remoto" xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Software de soporte remoto</title>
+  <desc id="desc">Dispositivos conectados para soporte remoto con iconos genéricos.</desc>
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <rect x="90" y="120" width="330" height="220" rx="18" fill="#dff2ff" stroke="#0b5cad" stroke-width="7"/>
+  <rect x="135" y="165" width="240" height="120" rx="10" fill="#f7fbff"/>
+  <rect x="500" y="95" width="130" height="260" rx="24" fill="#fff4e8" stroke="#f07b22" stroke-width="7"/>
+  <rect x="530" y="135" width="70" height="165" rx="10" fill="#ffffff"/>
+  <rect x="720" y="135" width="190" height="170" rx="20" fill="#e8f7ee" stroke="#188754" stroke-width="7"/>
+  <path d="M420 230h80M630 230h90" stroke="#0b5cad" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <circle cx="255" cy="405" r="34" fill="#0b5cad"/>
+  <circle cx="565" cy="405" r="34" fill="#f07b22"/>
+  <circle cx="815" cy="405" r="34" fill="#188754"/>
+  <text x="500" y="475" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0b5cad">Conexión remota segura entre dispositivos</text>
+</svg></p>
+
+<h2><span style="color:#188754;">1. TeamViewer</span></h2>
+<p><strong>TeamViewer</strong> permite acceso remoto, control de dispositivos, transferencia de archivos, soporte multiplataforma y funciones de seguridad como cifrado y autenticación de dos factores. Es útil para empresas que necesitan atender equipos de distintos sistemas operativos.</p>
+<p><strong>Ventajas:</strong> interfaz conocida, opciones empresariales, acceso desatendido autorizado, soporte móvil y herramientas complementarias de administración.</p>
+
+<h2><span style="color:#f07b22;">2. AnyDesk</span></h2>
+<p><strong>AnyDesk</strong> es una herramienta ligera de escritorio remoto. Se utiliza para controlar equipos, transferir archivos y apoyar a usuarios en diferentes plataformas. En un entorno escolar o de pequeño negocio puede ser útil por su rapidez y facilidad de instalación.</p>
+<p><strong>Ventajas:</strong> consumo bajo de recursos, conexión rápida, transferencia de archivos, compatibilidad con varios sistemas y opciones de seguridad.</p>
+
+<h2><span style="color:#0b5cad;">3. Supremo</span></h2>
+<p><strong>Supremo</strong> es software de control remoto pensado para asistencia técnica. Puede usarse sin configuraciones complicadas y permite conectarse a equipos de escritorio o dispositivos móviles compatibles.</p>
+<p><strong>Ventajas:</strong> uso sencillo, portabilidad, acceso remoto y funciones orientadas a soporte. Como toda herramienta remota, debe usarse solamente con autorización del cliente.</p>
+
+<h2><span style="color:#188754;">4. Chrome Remote Desktop</span></h2>
+<p><strong>Chrome Remote Desktop</strong> es una opción de Google para acceder a otro equipo mediante navegador y una cuenta autorizada. Puede servir para apoyo básico, especialmente cuando el usuario ya usa servicios de Google.</p>
+<p><strong>Ventajas:</strong> acceso sencillo desde navegador, opción gratuita para uso común y configuración relativamente simple.</p>
+
+<h2><span style="color:#f07b22;">5. Comparación práctica</span></h2>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%;">
+  <tr style="background:#0b5cad;color:white;"><th>Herramienta</th><th>Uso recomendado</th><th>Ventaja principal</th></tr>
+  <tr><td>TeamViewer</td><td>Soporte profesional y empresarial</td><td>Funciones completas y seguridad</td></tr>
+  <tr><td>AnyDesk</td><td>Atención rápida a usuarios</td><td>Ligero y rápido</td></tr>
+  <tr><td>Supremo</td><td>Soporte sencillo sin configuración compleja</td><td>Fácil de usar</td></tr>
+  <tr><td>Chrome Remote Desktop</td><td>Acceso básico con cuenta Google</td><td>Disponible desde navegador</td></tr>
+</table>
+
+<h2>Fuentes consultadas</h2>
+<ul>
+  <li><a href="https://www.teamviewer.com/en/products/remote/" target="_blank">TeamViewer Remote</a></li>
+  <li><a href="https://anydesk.com/en/features" target="_blank">AnyDesk Features</a></li>
+  <li><a href="https://www.supremocontrol.com/product-features/" target="_blank">Supremo: product features</a></li>
+  <li><a href="https://remotedesktop.google.com/" target="_blank">Chrome Remote Desktop</a></li>
+</ul>
+
+
+
+
+
+
+
+      </article>
+      <article class="entry" id="entrada-07">
+        <div class="entry-meta">
+          <span>Entrada 7</span>
+          <span>soporte-presencial, mantenimiento, hardware, redes, servicios-técnicos</span>
+        </div>
+
+<h2 class="article-title"><span style="color:#0b5cad;">Servicios de soporte técnico presencial que ofrece la empresa</span></h2>
+
+<p><svg class="inline-svg" style="max-width:820px;width:100%;height:auto;" aria-label="Servicios de soporte técnico presencial" xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Soporte técnico presencial</title>
+  <desc id="desc">Técnico revisando equipo de cómputo y red.</desc>
+  <rect width="1000" height="520" fill="#f7fbff"/>
+  <rect x="90" y="330" width="820" height="36" rx="18" fill="#0b5cad"/>
+  <rect x="170" y="130" width="300" height="200" rx="18" fill="#dff2ff" stroke="#0b5cad" stroke-width="7"/>
+  <rect x="220" y="175" width="200" height="105" rx="10" fill="#ffffff"/>
+  <circle cx="680" cy="170" r="45" fill="#188754"/>
+  <path d="M595 325c25-96 145-96 170 0" fill="none" stroke="#188754" stroke-width="24" stroke-linecap="round"/>
+  <path d="M640 250l-80 65M720 250l95 55" stroke="#f07b22" stroke-width="16" stroke-linecap="round"/>
+  <rect x="710" y="285" width="115" height="64" rx="12" fill="#fff4e8" stroke="#f07b22" stroke-width="6"/>
+  <path d="M735 316h65" stroke="#0b5cad" stroke-width="10" stroke-linecap="round"/>
+  <text x="500" y="455" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0b5cad">Diagnóstico, mantenimiento y redes</text>
+</svg></p>
+
+<h2><span style="color:#188754;">1. Diagnóstico de equipos</span></h2>
+<p>El diagnóstico presencial permite revisar fallas que no pueden confirmarse a distancia, como ruidos internos, sobrecalentamiento, puertos dañados, pantalla sin imagen, teclado defectuoso o problemas de energía.</p>
+
+<h2><span style="color:#f07b22;">2. Mantenimiento preventivo</span></h2>
+<p>Incluye limpieza externa, retiro de polvo con herramientas adecuadas, revisión de ventiladores, organización básica de cables, actualización de sistema y recomendaciones para cuidar el equipo. Su objetivo es evitar fallas futuras.</p>
+
+<h2><span style="color:#0b5cad;">3. Mantenimiento correctivo</span></h2>
+<p>Se aplica cuando el equipo ya presenta una falla. Puede incluir reemplazo de teclado, memoria RAM, disco de almacenamiento, fuente de poder o instalación limpia del sistema operativo cuando el cliente lo autoriza y existe respaldo previo.</p>
+
+<h2><span style="color:#188754;">4. Instalación y configuración de redes</span></h2>
+<p>La empresa configura routers, repetidores, impresoras en red y conexiones Wi-Fi. También revisa la ubicación del módem, intensidad de señal y contraseñas seguras para mejorar la experiencia del usuario.</p>
+
+<h2><span style="color:#f07b22;">5. Capacitación básica al usuario</span></h2>
+<p>El soporte presencial no termina al reparar. También se explica al cliente cómo evitar problemas: no descargar archivos sospechosos, actualizar programas, respaldar información y reconocer mensajes fraudulentos.</p>
+
+<h2>Fuentes consultadas</h2>
+<ul>
+  <li><a href="https://support.microsoft.com/windows" target="_blank">Ayuda y aprendizaje de Windows</a></li>
+  <li><a href="https://support.hp.com/" target="_blank">Soporte HP</a></li>
+  <li><a href="https://support.lenovo.com/" target="_blank">Soporte Lenovo</a></li>
+</ul>
+
+
+
+
+
+
+
+      </article>
+    </section>
+
+    <section class="section comments" id="comentarios">
+      <div class="section-heading">
+        <p class="eyebrow">Participación externa</p>
+        <h2>Comentarios con GitHub Discussions</h2>
+      </div>
+      <div class="discussion-panel">
+        <p>Esta sección permite recibir comentarios reales usando <strong>GitHub Discussions</strong>. Es útil para cumplir la rúbrica porque profesores y personas externas pueden comentar desde GitHub cuando el sitio esté publicado.</p>
+        <div class="discussion-setup" id="discussion-setup">
+          <strong>Falta configurar Giscus.</strong>
+          <p>Cuando tengas tu repositorio en GitHub, entra a <a href="https://giscus.app/es" target="_blank" rel="noopener">giscus.app/es</a>, selecciona tu repo y copia los valores de <code>repo</code>, <code>repo-id</code>, <code>category</code> y <code>category-id</code> en el bloque <code>GISCUS_CONFIG</code> al final de este archivo.</p>
+        </div>
+        <div id="giscus-comments"></div>
+      </div>
+    </section>
+
+    <section class="section checklist" id="checklist">
+      <div class="section-heading">
+        <p class="eyebrow">Lista de cotejo</p>
+        <h2>Verificación final</h2>
+      </div>
+      <ul class="check-grid">
+        <li>Perfil, título, propósito y metas incluidos.</li>
+        <li>7 entradas publicadas para cubrir todos los temas solicitados.</li>
+        <li>Cada entrada tiene etiquetas visibles, 5 o más apartados e hipervínculos.</li>
+        <li>Imágenes claras y relacionadas con cada tema.</li>
+        <li>Contenido teórico, práctico y con ejemplos propios.</li>
+        <li>Diseño personalizado con colores, tipografías y navegación.</li>
+        <li>Sección para comentarios y evidencia externa.</li>
+        <li>Lista para publicarse en GitHub Pages.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>NexoSoporte Digital - Proyecto escolar de soporte técnico</p>
+    <a href="#inicio">Volver al inicio</a>
+  </footer>
+  <script>
+    const GISCUS_CONFIG = {
+      repo: "TU_USUARIO/TU_REPOSITORIO",
+      repoId: "TU_REPO_ID",
+      category: "General",
+      categoryId: "TU_CATEGORY_ID"
+    };
+
+    const isGiscusConfigured = !Object.values(GISCUS_CONFIG).some((value) => value.startsWith("TU_"));
+    const setupBox = document.getElementById("discussion-setup");
+    const commentsBox = document.getElementById("giscus-comments");
+
+    if (isGiscusConfigured && commentsBox) {
+      if (setupBox) setupBox.hidden = true;
+
+      const script = document.createElement("script");
+      script.src = "https://giscus.app/client.js";
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      script.setAttribute("data-repo", GISCUS_CONFIG.repo);
+      script.setAttribute("data-repo-id", GISCUS_CONFIG.repoId);
+      script.setAttribute("data-category", GISCUS_CONFIG.category);
+      script.setAttribute("data-category-id", GISCUS_CONFIG.categoryId);
+      script.setAttribute("data-mapping", "pathname");
+      script.setAttribute("data-strict", "0");
+      script.setAttribute("data-reactions-enabled", "1");
+      script.setAttribute("data-emit-metadata", "0");
+      script.setAttribute("data-input-position", "bottom");
+      script.setAttribute("data-theme", "light");
+      script.setAttribute("data-lang", "es");
+      script.setAttribute("data-loading", "lazy");
+      commentsBox.appendChild(script);
+    }
+  </script>
+
